@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    background-image: url('background.gif'); /* Aqui está a referência para o seu gif de fundo estrelado */
+    background-size: 50%; /* Ajustando a escala do background para 50% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+.cd-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.cd {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.5s;
+}
+
+.button-wrapper {
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: purple; /* Alterada para roxo */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+.message {
+    margin-top: 50px; /* Aumentar para mover mais para baixo */
+    font-size: 36px; /* Aumentando o tamanho da fonte */
+    color: purple;
+    font-weight: bold; /* Tornar o texto mais grosso */
+    animation: wave 2s infinite ease-in-out, glow 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px purple, 0 0 10px purple, 0 0 15px purple;
+    }
+    50% {
+        text-shadow: 0 0 10px white, 0 0 15px white, 0 0 20px white;
+    }
+}
